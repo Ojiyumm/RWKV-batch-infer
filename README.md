@@ -4,6 +4,14 @@ os.environ['RWKV_JIT_ON'] = '1'
 os.environ["RWKV_CUDA_ON"] = '1' # '1' to compile CUDA kernel (10x faster), requires c++ compiler & cuda libraries
 os.environ["RWKV_fla_ON"] = '0' # use fla
 !!!cuda不可和fla同时开启
+
+# Update:
+* 12/16/2024
+  添加decode penalty
+  添加batch流式输出
+  修复state-tune的模型的推理bug
+
+  
 # Usage
 - 下面是快速使用，utils里新增了encode_bsz、decode_bsz、gen_bsz、sample_bsz函数以便快速使用，但未优化如果你要接入自己的后端还需自行优化，可以直接使用model.forward即可
 ```
